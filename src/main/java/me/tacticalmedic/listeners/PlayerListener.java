@@ -18,15 +18,18 @@ public class PlayerListener implements Listener {
 
         TacticalMedic plugin = TacticalMedic.getInstance();
 
+        // 리스폰 시 상태 재생성
         if (!plugin.hasState(uuid)) {
             plugin.createState(uuid);
         }
 
         PlayerMedicalState state = plugin.getState(uuid);
-        state.setBloodLevel(5000);
-        state.setPainLevel(0);
-        state.clearAllBleeding();
-        state.clearAllFractures();
+        if (state != null) {
+            // 혈액량 초기화 (기본 5000ml)
+            state.setBloodLevel(5000);
+            state.setPainLevel(0);
+            state.setUnconscious(false);
+            state.setHeartRate(80); // 예시: 평상 심박수
+        }
     }
-
 }

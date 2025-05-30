@@ -25,9 +25,9 @@ public class TacticalMedic extends JavaPlugin {
         instance = this;
 
         // 리스너 등록
-        getServer().getPluginManager().registerEvents(new DamageListener(), this);
-        getServer().getPluginManager().registerEvents(new InteractionListener(), this);
-        getServer().getPluginManager().registerEvents(new PlayerListener(), this); // ✅ 추가된 부분
+        getServer().getPluginManager().registerEvents(new DamageListener(), this); // 피해 이벤트 처리
+        getServer().getPluginManager().registerEvents(new InteractionListener(), this); // 상호작용 이벤트 처리
+        getServer().getPluginManager().registerEvents(new PlayerListener(), this); // 리스폰 이벤트 처리
 
         // 출혈 체크 태스크
         new BleedingTask().runTaskTimer(this, 20, 20); // 1초마다 반복
