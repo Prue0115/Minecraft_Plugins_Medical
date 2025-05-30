@@ -1,0 +1,10 @@
+name: TacticalMedic
+version: 1.0
+main: me.tacticalmedic.TacticalMedic
+api-version: 1.20
+
+commands:
+  medtest:
+    description: 치료 GUI를 테스트로 엽니다
+    usage: /medtest [플레이어]
+    permission: tacticalmedic.medtest
