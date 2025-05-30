@@ -1,0 +1,45 @@
+# ┌─────────────────────────────────────┐
+# │    TacticalMedic 설정 파일         │
+# └─────────────────────────────────────┘
+
+player:
+  maxBlood: 5000              # 플레이어 기본 혈액량 (ml)
+  unconsciousThreshold: 1000  # 기절 임계 혈액량
+  heartRateBase: 80           # 기본 심박수 (bpm)
+
+bleeding:
+  light: 5        # 경미 출혈 손실량 (ml/tick)
+  moderate: 10    # 중간 출혈 손실량
+  severe: 20      # 심각 출혈 손실량
+
+pain:
+  perDamage: 0.5         # 1 데미지당 통증 증가량
+  morphineReduction: 5   # 모르핀 1회 통증 완화량
+  maxPain: 10            # 최대 통증 수치
+
+drugs:
+  morphine:
+    cooldown: 60         # 쿨타임 (초)
+    sideEffectChance: 0.25 # 모르핀 부작용 확률
+  epinephrine: # 아드레날린
+    reviveChance: 0.6 # 심정지 환자 부활 확률
+    heartBoost: 20 # 심박수 증가량 (bpm)
+
+cpr: # 심폐소생술 설정
+  successRate: 0.6 # CPR 성공 확률
+  reviveHeartRate: 65 # CPR 후 환자 심박수
+
+gui: # GUI 설정
+  title: "의료 메뉴" # GUI 제목
+  size: 45 # GUI 크기 (아이템 슬롯 수)
+
+messages: # 메시지 설정
+  success: "&a[성공]" # 성공 메시지
+  fail: "&c[실패]" # 실패 메시지
+  cpr_success: "&a[CPR 성공] 환자가 의식을 되찾았습니다." # CPR 성공 메시지
+  cpr_fail: "&c[CPR 실패] 다시 시도하세요." # CPR 실패 메시지
+  pain: # 통증 메시지
+    morphineReduction: 5 # 모르핀 통증 완화 메시지
+  drugs: # 약물 메시지
+    morphine: # 모르핀 메시지
+      cooldown: 60 # 모르핀 쿨타임 메시지
